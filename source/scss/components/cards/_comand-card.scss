@@ -35,7 +35,6 @@
         img{
             height: 100%;
             width: 100%;
-            clip-path: polygon(100% 5%, 100% 35%, 100% 96%, 50% 100%, 0 97%, 0 39%, 0% 5%);
         }
 
         @include for-tablet{

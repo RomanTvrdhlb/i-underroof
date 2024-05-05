@@ -411,10 +411,6 @@
   }
 
   &--average {
-
-    @include small-tablet{
-        display: none;
-    }
     
     .content-section{
         &__box{
@@ -429,15 +425,12 @@
         color: rgba(var(--cl-b), 1);
       }
 
-      @include mobile {
-        grid-gap: 56px;
-      }
-
       &__title {
         text-align: center;
         margin-bottom: 32px;
         @include mobile {
           max-width: 85%;
+          margin-bottom: 0;
         }
       }
 
@@ -450,6 +443,43 @@
 
         p{
             font-weight: 400;
+        }
+      }
+    }
+
+    .table-guide{
+      @include small-tablet{
+        padding: 25px 15px 23px;
+      }
+
+      &__top{
+        @include small-tablet{
+          grid-gap: 24px 10px;
+        }
+      }
+
+      &__label{
+        @include small-tablet{
+          min-width: initial;
+          width: 100%;
+          font-size: 16px;
+        }
+      }
+
+      &__title{
+        @include mobile{
+        font-size: 22px;
+        }
+      }
+
+      &__price, &__name{
+        @include small-tablet{
+          @include for-mobile{
+          font-size: 16px;
+          }
+        }
+        @include mobile{
+          font-size: 14px;
         }
       }
     }

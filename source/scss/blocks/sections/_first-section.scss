@@ -381,6 +381,22 @@
               object-position: bottom center;
             }
           }
+
+          &--mode{
+            img,picture{
+              @include small-tablet{
+                object-position: top center;
+              }
+            }
+          }
+
+          &--center{
+            img,picture{
+              @include small-tablet{
+                object-position: center center;
+              }
+            }
+          }
         }
 
         &-left{

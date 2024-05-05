@@ -179,7 +179,7 @@
       }
     }
     .steps-card {
-      padding: 28px;
+      padding: 28px 20px;
       justify-content: center;
 
       @include laptop {
@@ -293,7 +293,7 @@
       }
     }
     .steps-card {
-      padding: 37.5px clamp(37.5px, 5.4054vw, 60px)
+      padding: 37.5px clamp(37.5px, 4.505vw, 50px)
         clamp(35.5px, 3.3333vw, 37.5px);
       justify-content: center;
 
