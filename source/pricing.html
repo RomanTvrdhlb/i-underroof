@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="Ru">
+@include('partials/head.html')
+
+<body>
+  @include('partials/header.html')
+  <!--@include('partials/header-user.html')-->
+
+  <main>
+
+    <section class="quiz-section" data-quiz>
+      <div class="quiz-section__bg">
+        <picture>
+          <img width='1440' height='1280' src='img/quiz/bg2.webp' alt='image'>
+        </picture>
+      </div>
+      <div class="container">
+        <div class="quiz-section__box">
+
+          <div class="quiz-section__top">
+            <h4 class="quiz-section__title h2">Calculate Your Project Cost Online</h4>
+            <div class="quiz-status">
+              <div class="quiz-status__line">
+                <div class="quiz-status__thumb"></div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="quiz-list">
+            <li class="quiz-list__item active">
+              <div class="quiz">
+                <div class="quiz__top">
+                  <span class="quiz__title subtitle">1. What Type of Property Do You Have?</span>
+                </div>
+
+                <div class="quiz__box">
+                  <ul class="quiz__list">
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img3.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz1" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Residential Building</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img2.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz1" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Commercial Building</span>
+                        </label>
+
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="quiz-card quiz-card--warn">
+                    <div class="quiz-card__icon">
+                      <img width="40" height="40" src="./img/sprite/warn.svg" alt="image">
+                    </div>
+
+                    <p>Choose the type of property to ensure we tailor our materials and services to your specific
+                      needs.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="quiz-list__item">
+              <div class="quiz">
+                <div class="quiz__top">
+                  <span class="quiz__title subtitle">2. Choose Your Preferred Siding Material</span>
+                </div>
+
+                <div class="quiz__box">
+                  <ul class="quiz__list quiz__list--mode">
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img7.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">James Hardie: Durable and Stylish</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img6.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Vinyl Siding: Affordable and Versatile</span>
+                        </label>
+
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img5.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Cedar Siding: Natural and Elegant</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img4.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Aluminum Siding: Lightweight and Rust-resistant</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img8.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Metal / Steel Siding: Strong and Long-lasting</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img9.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Engineered Wood Siding: Eco-friendly and Aesthetic</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img10.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Lux Panel Siding: Modern and Sleek</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img11.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Longboard Siding: Contemporary and Low Maintenance</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img12.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Easy Trim Quick Panel System: Quick Install and
+                            Modern</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img13.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz2" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">AL13 Covering: Industrial-grade and Efficient</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="quiz-card quiz-card--warn">
+                    <div class="quiz-card__icon">
+                      <img width="40" height="40" src="./img/sprite/warn.svg" alt="image">
+                    </div>
+
+                    <p>Select the material that you're interested in. Each type has unique benefits and characteristics.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="quiz-list__item">
+              <div class="quiz">
+                <div class="quiz__top">
+
+                  <span class="quiz__title subtitle">3. What's Your Current Exterior Finish?</span>
+                </div>
+
+                <div class="quiz__box">
+                  <ul class="quiz__list quiz__list--mode">
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img14.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz3" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Siding</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img15.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz3" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Brickwork</span>
+                        </label>
+
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img16.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz3" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Stucco</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img17.webp' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz3" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Wooden Panels</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <div class="quiz-card__bg">
+                          <picture>
+                            <img width='350' height='120' src='img/quiz/img1.png' alt='image'>
+                          </picture>
+                        </div>
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz3" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content"></span>
+                        </label>
+                        <div class="quiz-card__coment">
+                          <input type="text" name="other" placeholder="Other (please specify)">
+                      </div>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="quiz-card quiz-card--warn">
+                    <div class="quiz-card__icon">
+                      <img width="40" height="40" src="./img/sprite/warn.svg" alt="image">
+                    </div>
+
+                    <p>Knowing what's currently on your building helps us understand the scope of work required.</p>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li class="quiz-list__item">
+              <div class="quiz">
+                <div class="quiz__top">
+                  <span class="quiz__title subtitle">4. How Urgent is Your Project?</span>
+                </div>
+
+                <div class="quiz__box">
+                  <ul class="quiz__list">
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz4" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Planning Stage: I'm just getting ideas and there's no
+                            rush.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz4" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Ready to Start: Looking to begin within the next 1-3
+                            months.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz4" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Urgent Requirement: Immediate action needed due to damage
+                            or other concerns.</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="quiz-card quiz-card--warn">
+                    <div class="quiz-card__icon">
+                      <img width="40" height="40" src="./img/sprite/warn.svg" alt="image">
+                    </div>
+
+                    <p>Tell us your timeline so we can prioritize and schedule your project accordingly.</p>
+                  </div>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="quiz-list__item">
+              <div class="quiz">
+                <div class="quiz__top">
+
+                  <span class="quiz__title subtitle">5. What's the Size of Your Project Area?</span>
+                </div>
+
+                <div class="quiz__box">
+                  <ul class="quiz__list">
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz5" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">under 1,000 sq. ft.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz5" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">1,000 - 2,000 sq. ft.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz5" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">2,000 - 3,000 sq. ft.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz5" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">over 3,000 sq. ft.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz5" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Not Sure (I need help with estimation)</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="quiz-card quiz-card--warn">
+                    <div class="quiz-card__icon">
+                      <img width="40" height="40" src="./img/sprite/warn.svg" alt="image">
+                    </div>
+
+                    <p>Estimate the size to help us provide a more accurate quote.</p>
+                  </div>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="quiz-list__item">
+              <div class="quiz">
+                <div class="quiz__top">
+
+                  <span class="quiz__title subtitle">6. Are You Considering Financing Options?</span>
+                </div>
+
+                <div class="quiz__box">
+                  <ul class="quiz__list">
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz6" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Yes, I'm interested in financing.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz6" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">No, I have other payment plans.</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="quiz__item">
+                      <div class="quiz-card">
+                        <label class="quiz-checkbox">
+                          <input type="radio" name="quiz6" class="quiz-checkbox__field">
+                          <span class="quiz-checkbox__content">Maybe, I'd like to know more about both upfront and
+                            financing costs.</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="quiz-card quiz-card--warn">
+                    <div class="quiz-card__icon">
+                      <img width="40" height="40" src="./img/sprite/warn.svg" alt="image">
+                    </div>
+
+                    <p>Select an option to explore payment plans that could make your project more financially manageable.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="quiz-list__item">
+              <div class="quiz quiz--mode">
+                <span class="quiz__title h2">Get Your Instant Estimate</span>
+
+                <div class="quiz__wrapp">
+                  <label for="name" class="quiz__label">
+                    <input class="quiz__input" type="text" id="name" placeholder="Full Name:">
+                    <span class="quiz__icon">
+                      <svg width='24' height='24'>
+                        <use href='img/sprite/sprite.svg#user'></use>
+                      </svg>
+                    </span>
+                  </label>
+                  <label for="address" class="quiz__label">
+                    <input class="quiz__input" type="email" id="address" placeholder="Email Address:">
+                    <span class="quiz__icon">
+                      <svg width='24' height='24'>
+                        <use href='img/sprite/sprite.svg#phone'></use>
+                      </svg>
+                    </span>
+                  </label>
+                  <label for="phone" class="quiz__label">
+                    <input class="quiz__input" type="tel" id="phone" placeholder="Phone Number:">
+                    <span class="quiz__icon">
+                      <svg width='24' height='24'>
+                        <use href='img/sprite/sprite.svg#phone'></use>
+                      </svg>
+                    </span>
+                  </label>
+                  <label for="mess" class="quiz__label">
+                    <textarea class="quiz__area" id="mess"
+                      placeholder="Project Details: Share any additional information about your project."></textarea>
+                    <span class="quiz__icon quiz__icon--mode">
+                      <svg width='24' height='24'>
+                        <use href='img/sprite/sprite.svg#write'></use>
+                      </svg>
+                    </span>
+                  </label>
+
+                  <label class="custom-checkbox custom-checkbox--mode">
+                    <input type="checkbox" class="custom-checkbox__field">
+                    <span class="custom-checkbox__content">I give my consent to the processing of personal data.</span>
+                  </label>
+                  <p>Consent for Contact: By submitting this form, you agree to be contacted by I-UNDERROF Company via phone, text, or email for the purposes of providing an estimate. You may opt-out at any time. 
+                    See our Privacy Policy for more details. 
+                    </p>
+                  <button class="main-btn" data-btn-modal="success">Send letter
+                    <span></span>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="quiz-section__bottom">
+            <button class="main-btn" data-prev>Previous
+              <span></span>
+            </button>
+            <button class="main-btn" data-next>Next
+              <span></span>
+            </button>
+
+            <span class="quiz-section__info">Question <i class="quiz-section__current">1</i> of <i class="quiz-section__all"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="callback">
+      <button class="callback__btn">
+        <svg class="callback__btn-close" width='24' height='24'>
+          <use href='img/sprite/sprite.svg#close'></use>
+        </svg>
+        <svg class="callback__btn-icon" width='20' height='20'>
+          <use href='img/sprite/sprite.svg#phone'></use>
+        </svg>
+      </button>
+      <ul class="callback__list">
+        <li class="callback__item">
+          <a href="tel:+4034017035" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#phone'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item">
+          <a data-btn-modal="callback" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#call'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item  calc">
+          <a href="pricing.html" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#calc'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item">
+          <a href="mailto:iunderroof@gmail.com" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#mail'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item">
+          <a href="#" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#mess'></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!--    @include('partials/components/sections/how-section.html')-->
+  </main>
+
+  @include('partials/footer.html')
+  @include('partials/modals.html')
+</body>
+<script src="js/main.js"></script>
+
+</html>

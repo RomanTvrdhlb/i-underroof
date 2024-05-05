@@ -1,0 +1,110 @@
+.areas-menu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    transform: translateY(100%);
+    z-index: 20;
+    opacity: 0;
+    display: none;    
+    height: fit-content;
+
+       @media (max-height: (810px)) {
+        height: calc(100vh - var(--header-height) - 25px);
+
+        .areas-menu__box{
+            padding: clamp(20px, 3.6036vw, 40px) var(--container-offset) 30px;
+        }
+        }
+    &__box{
+        overflow-y: auto;
+        width: 100%;
+        padding: clamp(20px, 3.6036vw, 40px) var(--container-offset) clamp(30px, 5.818vw, 64px);
+      
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(20px, 3.1532vw, 35px);
+    }
+
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        background-color: rgba(var(--bg-f),1.0);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 4px 12px 0 rgba(0, 0, 0, 0);
+    }
+
+    &__top{
+        display: flex;
+        align-items: center;
+        grid-gap: 24px;
+    }
+
+    &__title{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+    }
+
+    &__label{
+        border-radius: 16px 0;
+        padding: 4px 16px;
+        background: var(--gr-a);
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        color: rgba(var(--cl-a),1.0);
+    }
+
+    &__bg{
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img,picture{
+            width: Min(52.258vw, 648px);
+            height: Min(42.903vw, 532px);
+
+            @media (max-height: (650px)) {
+                height: 450px;
+                width: auto;    
+            }
+        }
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 16px 30px;
+    }
+
+    &__link{
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+        font-size: clamp(16px, 1.6216vw, 18px);
+        line-height: 150%;
+        border-radius: 16px 0;
+        padding: 8px 16px;
+        background: rgba(var(--bg-a),1.0);
+        transition: all .4s;
+
+        &:hover{
+            color: rgba(var(--cl-d),1.0);
+        }
+    }
+
+    @include tablet{
+        display: none !important;
+    }
+}

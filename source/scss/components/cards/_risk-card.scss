@@ -1,0 +1,49 @@
+.risk-card{
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-gap: 24px;
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 8px;
+        text-align: center;
+    }
+
+    &__title{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+    }
+
+    &__icon{
+        width: clamp(80px, 9.009vw, 100px);
+        height: clamp(80px, 9.009vw, 100px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        
+        &::before{
+            position: absolute;
+            content: '';
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='101' height='100' fill='none'%3E%3Cpath stroke='%23EB5757' stroke-width='2' d='m50.5 1.1517 49 27.9994v41.6978l-49 27.9994-49-27.9994V29.1511l49-27.9994Z'/%3E%3C/svg%3E");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &--mode{
+            &::before{
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='101' height='100' fill='none'%3E%3Cpath stroke='url(%23paint0_linear_7837_3582)' stroke-width='2' d='m50.5 1.1517 49 27.9994v41.6978l-49 27.9994-49-27.9994V29.1511l49-27.9994Z'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_7837_3582' x1='100.5' x2='-19.3282' y1='-6.75624e-06' y2='61.1368' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%237D72A9'/%3E%3Cstop offset='1' stop-color='%239A8BDA'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+           }
+        }
+    }
+}

@@ -1,0 +1,400 @@
+.first-section {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -50px;
+
+  @include for-small-tablet {
+    padding: clamp(96px, 11.4414vw, 127px) 0 clamp(96px, 16.036vw, 178px);
+    overflow: hidden;
+  }
+
+  @include small-tablet {
+    padding: 96px 0;
+  }
+
+  &--mode {
+    @media (min-width: (400px)) {
+      margin-bottom: 0;
+    }
+  }
+
+  &--about {
+    padding: clamp(145px, 16.8468vw, 187px) 0;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+
+    .first-section {
+      &__bg {
+        img,
+        picture {
+          @include for-desktop {
+            object-position: center center;
+          }
+
+          @include desktop {
+            object-position: bottom center;
+          }
+        }
+      }
+
+      &__title {
+        text-transform: none;
+        line-height: 120%;
+      }
+
+      &__box {
+        grid-gap: 24px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  --cropp: polygon(0 0, 100% 0%, 100% 92%, 50% 100%, 0 92%);
+  --cropp-mob: polygon(0 0, 100% 0%, 100% 91%, 50% 100%, 0 91%);
+  --cropp-left: polygon(100% 0%, 100% 49%, 100% 100%, 100% 100%, 0 92%, 0 0);
+  --cropp-right: polygon(100% 0%, 100% 49%, 100% 100%, 100% 91%, 0 100%, 0 0);
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+
+    @include for-small-tablet {
+      inset: 0 -1px;
+    }
+
+    @include small-tablet {
+      inset: 0;
+    }
+
+    img,
+    picture {
+      width: 100%;
+      height: 100%;
+      object-position: top center;
+      overflow: hidden;
+    }
+
+    &:not(.first-section__bg--mode) {
+      img,
+      picture {
+        @include for-mobile {
+          clip-path: var(--cropp);
+        }
+        @include mobile {
+          clip-path: var(--cropp-mob);
+        }
+      }
+    }
+
+    &--mode {
+      @include for-small-tablet {
+        display: flex;
+      }
+
+      @include small-tablet {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-left {
+      display: flex;
+      @include for-small-tablet {
+        flex-basis: 50%;
+        margin-right: -1px;
+      }
+
+      img,
+      picture {
+        @include for-small-tablet {
+          clip-path: var(--cropp-left);
+        }
+        @include small-tablet {
+          min-height: 210px;
+        }
+      }
+
+      &.map {
+        @include for-desktop{
+          img,picture{
+            object-position: 50% 50%;
+          }
+        }
+
+        @include small-tablet {
+          img,
+          picture {
+            max-height: 390px;
+            object-position: 50% 30%;
+          }
+        }
+
+        @include mobile {
+          img,
+          picture {
+            min-height: 329px;
+            object-position: 65% 30%;
+          }
+        }
+      }
+
+      &.violet {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          background: var(--gr-a);
+          pointer-events: none;
+          opacity: 0.92;
+
+          @include for-small-tablet {
+            clip-path: var(--cropp-left);
+          }
+          @include small-tablet {
+            clip-path: var(--cropp-mob);
+          }
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      @include for-small-tablet {
+        flex-basis: 50%;
+      }
+      img,
+      picture {
+        @include for-small-tablet {
+          clip-path: var(--cropp-right);
+        }
+        @include small-tablet {
+          clip-path: var(--cropp-mob);
+
+          @include for-mobile {
+            max-height: clamp(412px, 72.266vw, 555px);
+          }
+        }
+        @include mobile {
+          max-height: clamp(412px, 79.861vw, 460px);
+        }
+      }
+
+      &.violet {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          background: var(--gr-a);
+          pointer-events: none;
+          opacity: 0.92;
+
+          @include for-small-tablet {
+            clip-path: var(--cropp-right);
+          }
+          @include small-tablet {
+            clip-path: var(--cropp-mob);
+          }
+        }
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 32px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 32px;
+
+    @include for-small-tablet {
+      max-width: clamp(350px, 49.0991vw, 545px);
+    }
+
+    p {
+      color: rgba(var(--cl-a), 1);
+    }
+
+    @include for-laptop {
+      padding-left: Min(8.871vw, 110px);
+    }
+
+    @include for-small-tablet {
+      margin-left: 50%;
+      padding: 0 clamp(25px, 3.6036vw, 40px);
+    }
+
+    @include small-tablet {
+      min-height: clamp(438px, 100vw, 768px);
+      padding-top: 60%;
+      @include for-mobile {
+        padding-bottom: clamp(25px, 13.021vw, 100px);
+      }
+    }
+  }
+
+  &__title {
+    color: rgba(var(--cl-a), 1);
+    max-width: clamp(400px, 67.5676vw, 750px);
+
+    @include for-mobile {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+
+    @include mobile {
+      margin-top: 76px;
+      flex-direction: column;
+    }
+
+    .main-btn {
+      padding: 10px 32px;
+      font-size: clamp(16px, 1.6216vw, 18px);
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &--financing {
+    margin-bottom: -70px;
+    padding: clamp(55px, 7.027vw, 78px) 0 clamp(86px, 10.9009vw, 121px);
+
+    .main-top__title{
+        @include mobile{
+          max-width: 330px;
+        }
+      
+    }
+  }
+
+  &--referral {
+    padding: clamp(55px, 7.027vw, 78px) 0 clamp(118px, 10.9009vw, 121px);
+
+    @include for-mobile {
+      margin-bottom: -70px;
+    }
+    @include mobile {
+      margin-bottom: -90px;
+
+      .main-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  &--contacts {
+    @include for-small-tablet {
+      padding: 109px 0 159px;
+    }
+
+    @include small-tablet {
+      padding: 109px 0 136px;
+    }
+
+    .first-section {
+      &__inner {
+        @include mobile {
+          @include for-ios {
+            padding-top: 80%;
+          }
+        }
+        @include ios {
+          padding-top: 86%;
+        }
+      }
+
+      &__bg-right {
+        img,
+        picture {
+          @include mobile {
+            max-height: 454px;
+          }
+        }
+      }
+    }
+  }
+
+
+  &--info{
+    padding: 69px 0 clamp(112px, 10.7207vw, 119px);
+
+    @include for-laptop{
+      min-height: 521px;
+    }
+    
+    .first-section{
+      &__inner{
+        margin: 0;
+        padding-left: 0;
+
+        @include for-small-tablet{
+          max-width: clamp(350px, 46.5766vw, 517px);
+        }
+
+        @include small-tablet{
+          padding-bottom: 0;
+          padding-top: calc(Min(52.083vw, 400px) - 5px);
+        }
+
+        &--mode{
+          @include for-small-tablet{
+            max-width: clamp(350px, 50vw, 555px);
+            padding-right: clamp(25px, 3.3333vw, 37px);
+          }
+        }
+      }
+
+      &__bg{
+        @include small-tablet{
+         flex-direction: column-reverse;   
+        }
+
+        &-right{
+
+        @include small-tablet{
+          max-height: Min(52.083vw, 400px);
+        }
+
+          img,picture{
+            @include small-tablet{
+              clip-path: initial;
+              object-position: bottom center;
+            }
+          }
+        }
+
+        &-left{
+            @include small-tablet{
+              height: 100%;
+            }
+
+        img,picture{
+          @include small-tablet{
+            clip-path: var(--cropp-mob);
+          }
+          }
+        }
+      }
+    }
+  }
+}

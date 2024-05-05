@@ -1,0 +1,238 @@
+.about-section{
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &__bg{
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        pointer-events: none;
+
+        img,picture{
+            width: 100%;
+            height: 100%;
+
+            @include mobile{
+                object-position: right;
+            }
+        }
+    }
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        
+        @include for-mobile{
+            grid-gap: 47px;
+        }
+
+        @include mobile{
+            grid-gap: 138px;
+        }
+    }
+
+    &__wrapp{
+        @include for-tablet{
+            display: grid;
+            grid-template-columns: auto 545px;
+            grid-gap: clamp(10px, 3.6036vw, 40px);
+        }
+
+        @include tablet{
+           display: flex;
+           flex-direction: column;
+           grid-gap: 32px;
+        }
+
+        p{
+            @include tablet{
+                order: 3;
+            }
+        }
+    }
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 32px;
+
+        @include tablet{
+            display: contents;
+        }
+    }
+
+    &__btns{
+        display: flex;
+        align-items: center;
+        grid-gap: 10px 16px;
+        
+        @include for-small-tablet{
+            margin-top: 8px;
+        }
+      
+        @include tablet{
+            @include for-small-tablet{
+            width: 80%;
+            align-self: center;
+            }
+            order: 4;
+        }
+
+        @include mobile{
+            flex-direction: column;
+        }
+
+        .main-btn{
+            padding: 10px 32px;
+        
+        @include tablet{
+            width: 100%;
+        }
+        }
+    }
+
+    &__title{
+        font-family: var(--font-family2);
+        @include tablet{
+            order: 1;
+            align-self: center;
+        }
+    }
+
+    .about-slider{
+        @include tablet{
+            order: 2;
+        }
+
+        &__wrapper{
+            margin: 25px 0;
+        }
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 56px;
+    }
+
+
+    &__image{
+        display: flex;
+
+        @include for-laptop{
+            right: -15%;
+        }
+
+        @include laptop{
+            @include for-tablet{
+                right: -9%;
+            }
+        }
+
+        @include tablet{
+            @include for-small-tablet{
+                right: -8%;
+            }
+        }
+       
+        @include for-small-tablet{
+            position: absolute;
+           
+            bottom: calc(clamp(96px, 16.8468vw, 187px) * -1);
+            width: Min(61.111vw, 825px);
+            height: Min(65.333vw, 882px);
+        }
+
+        @include small-tablet{
+            width: 100%;
+   
+        }
+
+        img,picture{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &--mode{
+        padding: clamp(168px, 24.1441vw, 268px) 0 clamp(96px, 16.8468vw, 187px);
+
+        @include small-tablet{
+            padding-bottom: 0;
+        }
+
+        .main-form{
+            @include mobile{
+                margin-bottom: 40px;
+            }
+        }
+
+        .about-section{
+            &__box{
+                grid-gap: clamp(30px, 3.5135vw, 39px);
+
+                @include for-small-tablet{
+                    max-width: clamp(410px, 48.6486vw, 540px);
+                }
+                @include small-tablet{
+                    align-items: center;
+                }
+            }
+
+            &__bg{
+                img,picture{
+                    @include mobile{
+                    object-position: center;
+                }
+            }
+            }
+        }
+    }
+
+    &--cities{
+        padding: 96px 0;
+        @include for-laptop{
+            overflow: initial;
+        }
+        @include small-tablet{
+            padding-bottom: 0;
+        }
+
+        .main-form{
+            @include for-small-tablet{
+                max-width: clamp(410px, 48.6486vw, 540px);
+            }
+            @include mobile{
+                margin-bottom: 40px;
+            }
+        }
+
+        .about-section{
+            &__box{
+                grid-gap: clamp(24px, 5.045vw, 56px);
+
+                @include for-small-tablet{
+                    max-width: clamp(410px, 59.9099vw, 665px);
+                }
+                @include small-tablet{
+                    align-items: center;
+                }
+            }
+
+            &__image{
+                @include for-small-tablet{
+                    bottom: -96px;
+                }
+            }
+            &__bg{
+                img,picture{
+                    @include mobile{
+                    object-position: center;
+                }
+            }
+            }
+        }
+    }
+}

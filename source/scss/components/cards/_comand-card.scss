@@ -1,0 +1,103 @@
+.comand-card{
+    display: flex;
+    flex-direction: column;
+
+    @include tablet{
+        @include for-mobile{
+        max-width: 400px;
+        }
+    }
+
+    @include mobile{
+        max-width: 255px;
+    }
+
+    &__bottom{
+        margin-top: -20px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 4px;
+        align-items: center;
+        background-color: rgba(var(--bg-d),1.0);
+        padding: 36px 16px 72px;
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+        overflow: hidden;
+    }
+
+    &__image{
+        position: relative;
+        background: var(--gr-a);
+        clip-path: polygon(50% 0, 100% 29%, 100% 93%, 50% 97%, 0 93%, 0 29%);
+        overflow: hidden;
+        z-index: 2;
+        
+        img{
+            height: 100%;
+            width: 100%;
+            clip-path: polygon(100% 5%, 100% 35%, 100% 96%, 50% 100%, 0 97%, 0 39%, 0% 5%);
+        }
+
+        @include for-tablet{
+            width: 255px;
+            height: 255px;
+        }
+    }
+
+    &__text{
+        font-size: clamp(16px, 1.6216vw, 18px);
+        line-height: 150%;
+        text-align: center;
+    }
+
+    &__link{
+        align-items: center;
+        grid-gap: 8px;
+        img{
+            width: 9px;
+            height: 15px;
+            margin-bottom: -2px;
+        }
+
+        &:before{
+            left: auto;
+            right: 0;
+            width: 0;
+        }
+
+        &:hover{
+            &::before{
+            left: 0;
+            right: auto;
+            width: 100%;
+            } 
+        }
+    }
+
+    .main-link{
+        margin-top: 4px;
+    }
+
+    &--mode{
+        max-width: clamp(255px, 60.764vw, 350px);
+
+        .comand-card{
+            &__image{
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1;
+                clip-path: polygon(0% 29%, 50% 1%, 100% 29%, 100% 71%, 50% 99%, 0% 71%);
+             
+                img,picture{
+                    clip-path: none;
+                }
+            }
+
+            &__bottom{
+                background-color: transparent;
+                padding-bottom: 5px;
+                clip-path: none;
+            }
+        }
+    }
+}

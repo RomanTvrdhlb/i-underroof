@@ -1,0 +1,74 @@
+.process-card{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 8px;
+
+        p[data-clip-item] {
+            overflow: hidden;
+
+            @include for-tablet {
+              max-height: clamp(125px, 11.5385vw, 135px);
+            }
+      
+            @include tablet {
+              max-height: 72px;
+            }
+        }
+
+        .main-link{
+            width: fit-content;
+            margin-top: -8px;
+        }
+    }
+
+    &__title{
+        font-family:  var(--font-family2);
+        font-weight: 700;
+        font-size: clamp(16px, 1.6216vw, 18px);
+        line-height: 150%;
+        text-transform: uppercase;
+    }
+
+    &__image{
+        position: relative;
+        display: flex;
+        z-index: 1;
+
+        img,picture{
+            height: 100%;
+            width: 100%;
+            @include for-tablet{
+                min-height: clamp(200px, 18.182vw, 256px);
+            }
+            border-radius: 16px 0;
+        }
+
+        &::before{
+       
+            width: 48px;
+            height: 48px;
+            z-index: 5;
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            content: counter(li);
+            background-image: var(--icon-btn);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: rgba(var(--cl-a),1.0);
+        }
+    }
+}

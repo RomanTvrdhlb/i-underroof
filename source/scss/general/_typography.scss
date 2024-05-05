@@ -1,0 +1,141 @@
+h1,.h1 {
+  font-family: var(--font-family2);
+  font-weight: 700;
+  font-size: clamp(32px, 4.3243vw, 48px);
+}
+
+h2, .h2 {
+  font-weight: 700;
+  font-size: clamp(28px, 3.6036vw, 40px);
+}
+
+h3, .h3 {
+  font-size: clamp(20px, 4.734375vw, 28px);
+  font-weight: 700;
+}
+
+h4, .h4 {
+  font-size: clamp(18px, 2.813vw, 20px);
+  font-weight: 600;
+} 
+
+h5, .h5 {
+  font-weight: 700;
+  font-size: clamp(32px, 3.6036vw, 40px);
+}
+
+.upper-text{
+  text-transform: uppercase;
+}
+
+.subtitle{
+  font-size: clamp(20px, 2.1622vw, 24px);
+  font-weight: 700;
+}
+
+.white-text{
+  color: rgba(var(--cl-a),1.0);
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+header .logo{
+  width: clamp(141px, 16.5766vw, 184px);
+  height: clamp(44px, 5.045vw, 56px);
+}
+
+footer .logo{
+  width: clamp(350px, 35.2252vw, 391px);
+  height: clamp(107px, 10.8108vw, 120px);
+}
+
+.rating{
+  display: flex;
+  align-items: center;
+  grid-gap: 4px;
+
+  &__star{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-image: url(/img/sprite/star.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .42;
+    transition: all .4s;
+    
+    &.active{
+      opacity: 1;
+    }
+  }
+}
+
+.timer{
+  display: flex;
+  align-items: center;
+  grid-gap: 6px;
+
+  &__item{
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+    &:not(:first-child){
+      &::before{
+        content: ':';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        height: 100%;
+        transform: translateX(-100%);
+        font-weight: 700;
+        font-size: clamp(16px, 1.6216vw, 18px);
+        line-height: 125%;
+        background: var(--gr-a);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  &__value{
+    font-weight: 700;
+    font-size: clamp(16px, 1.6216vw, 18px);
+    line-height: 125%;
+    background: var(--gr-a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+
+ol:not([class]){
+  display: flex;
+  flex-direction: column;
+  li{
+    list-style: disc;
+  }
+
+  @include laptop{
+    padding-left: var(--container-offset);
+  }
+}
+
+.fancybox__infobar{
+  *{
+    color: rgba(var(--cl-a),1.0);
+  }
+}
+
+[data-fancybox]{
+    outline: none;
+}

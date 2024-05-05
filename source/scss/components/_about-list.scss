@@ -1,0 +1,241 @@
+.about-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px 0;
+  overflow: hidden;
+  background: rgba(var(--bg-d), 1);
+
+  &__item {
+    display: flex;
+
+    @include for-small-tablet {
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    background: var(--gr-a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+
+    &::before {
+      width: 100%;
+      position: absolute;
+      content: "";
+      height: 1px;
+      left: 0;
+      right: auto;
+      bottom: 0;
+      content: "";
+      background: var(--gr-a);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &::before {
+        right: 0;
+        left: auto;
+        width: 0;
+      }
+    }
+  }
+
+  &__box {
+    flex-basis: 50%;
+    padding: clamp(32px, 3.6036vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: clamp(24px, 2.8829vw, 32px);
+  }
+
+  &__image {
+    flex-basis: 50%;
+    display: flex;
+    img,
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    @include small-tablet {
+      display: none;
+    }
+    &--mode {
+      @include for-small-tablet {
+        display: none;
+      }
+      @include small-tablet {
+        display: inline;
+      }
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family2);
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      z-index: 1;
+      background-color: rgba(var(--bg-b), 0.7);
+    }
+
+    img,
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--mode {
+    border-radius: 16px 0 0 0;
+  }
+
+  &--trim {
+    border-radius: 16px 0 0 0;
+
+    .main-slider__image {
+      @include for-mobile {
+        max-height: 272px;
+
+        &--mode {
+          max-height: 272px;
+        }
+      }
+    }
+  }
+
+  &--popular {
+    grid-gap: 25px;
+    background-color: rgba(var(--bg-a), 1);
+    .about-list {
+      &__item {
+        grid-gap: 25px 24px;
+      }
+      &__box {
+        z-index: 1;
+        position: relative;
+        border-radius: 16px 0;
+        overflow: hidden;
+
+        * {
+          color: rgba(var(--cl-a), 1);
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        p[data-clip-item] {
+          overflow: hidden;
+
+          @include for-tablet {
+            max-height: clamp(214px, 18.4615vw, 216px);
+          }
+
+          @include tablet {
+            @include for-mobile{
+            max-height: 214px;
+            }
+          }
+
+          @include mobile{
+            max-height: 300px;
+          }
+
+        }
+        
+        .main-link{
+          font-size: 18px;
+          width: fit-content;
+          margin-top: calc(clamp(24px, 2.906vw, 34px) * -1);
+        }
+
+        @include small-tablet {
+          padding: 71px 32px;
+        }
+
+        @include mobile {
+          min-height: 544px;
+        }
+      }
+    }
+
+    .main-slider {
+      @include for-small-tablet {
+        width: calc(50% - 12px);
+      }
+      background-color: transparent;
+
+      &__container {
+        border-radius: 16px 0;
+      }
+
+      @include mobile {
+        min-height: 544px;
+      }
+    }
+  }
+
+  &--cities {
+    .about-list {
+      &__box {
+        p[data-clip-item] {
+          overflow: hidden;
+
+          @include for-laptop {
+            max-height: 320px;
+          }
+          @include laptop {
+            @include for-tablet {
+              max-height: clamp(305px, 28.829vw, 320px);
+            }
+          }
+
+          @include tablet {
+            @include for-small-tablet {
+              max-height: 310px;
+            }
+          }
+
+          @include small-tablet {
+            @include for-mobile {
+              max-height: 214px;
+            }
+          }
+
+          @include mobile {
+            max-height: 358px;
+          }
+        }
+      }
+      &__link {
+        width: fit-content;
+        margin-top: calc(clamp(14px, 2.0513vw, 24px) * -1);
+      }
+    }
+  }
+}

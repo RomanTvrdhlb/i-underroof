@@ -1,0 +1,256 @@
+.footer {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background-color: rgba(var(--bg-i),1.0);
+
+  @include for-mobile{
+    padding-bottom: 46px;
+  }
+
+  &__inner{
+    display: flex;
+    flex-direction: column;
+
+    @include for-small-tablet{
+      grid-gap: 29px;
+    }
+
+    @include small-tablet{
+      grid-gap: 37px;
+    }
+  }
+  
+  &__top{
+    grid-gap: 32px;
+
+    @include for-tablet{
+      grid-template-columns: minmax(auto, 450px) repeat(2, 1fr);
+    }
+
+    @include tablet{
+      @include for-small-tablet{
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @include for-small-tablet{
+      display: grid;
+    }
+
+    @include small-tablet{
+      display: flex;
+      flex-direction: column;
+    }
+    // @include small-tablet{
+    //   display: contents;
+    // }
+  }
+
+  &__col{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 32px;
+  }
+ 
+  &__bottom{
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    position: relative;
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid var(--br-a);
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+
+    @include for-small-tablet{
+      padding-top: 29px;
+      justify-content: space-between;
+    }
+
+    @include small-tablet{
+      padding-top: 37px;
+      flex-direction: column;
+    }
+
+    &-text{
+      font-weight: 400;
+      font-size: clamp(14px, 1.4414vw, 16px);
+      line-height: 150%;
+      text-align: center;
+      color: rgba(var(--cl-c),1.0);
+    }
+
+    &-links{
+      display: flex;
+      align-items: center;
+      grid-gap: 32px;
+    }
+
+    a{
+      font-weight: 700;
+
+      &::before{
+        width: 0;
+        left: auto;
+        right: 0;
+      }
+
+      &:hover{
+        &::before{
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__wrapp{
+    display: flex;
+    flex-direction: column;
+
+    @include for-small-tablet{
+      grid-gap: 16px;
+    }
+
+    @include small-tablet{
+      grid-gap: 24px;
+      align-items: center;
+    }
+  }
+
+  &__phone{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      font-weight: 400;
+      font-size: clamp(16px, 1.6216vw, 18px);
+      line-height: 150%;
+    
+      @include for-small-tablet{
+        grid-gap: 0 4px;
+      }
+    
+      @include small-tablet{
+        grid-gap: 0 8px;
+      }
+    
+      svg,img{
+        color: rgba(var(--cl-c),1.0);
+      }
+
+      &-icon{
+        grid-column: 1;
+        grid-row: 1/3;
+      }
+ 
+  }
+
+  .main-social{
+    @include small-tablet{
+      margin-bottom: 8px;
+      grid-gap: 20px;
+    }
+    
+
+    @include for-small-tablet{
+      grid-gap: clamp(10px, 1.8018vw, 20px);
+    }
+
+    &__link{
+     
+
+      @include for-small-tablet{
+        width: clamp(36px, 4.3243vw, 48px);
+        height: clamp(36px, 4.3243vw, 48px);
+      }
+
+      @include small-tablet{
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  .main-nav{
+    justify-content: center;
+      &::before{
+        display: none;
+      }
+      padding: 0;
+    ul{
+      @include for-small-tablet{
+        width: fit-content;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @include small-tablet{
+        display: grid;
+        @include for-mobile{
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @include mobile{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    a{
+      font-size: clamp(18px, 2.1622vw, 24px);
+      color: rgba(var(--cl-b),1.0);
+      text-align: start;
+
+      &:hover{
+        color: rgba(var(--cl-d),1.0);
+      }
+    }
+
+    @include small-tablet{
+      order: 3;
+      margin-top: 16px;
+    }
+  }
+
+  .geo{
+    align-items: flex-start;
+
+    &__icon{
+      filter: grayscale(10);
+    }
+
+    @include for-small-tablet{
+      grid-gap: 4px;
+    }
+  
+    @include small-tablet{
+      grid-gap: 8px;
+    }
+  }
+
+  .main-btn{
+    @include for-small-tablet{
+      width: fit-content;
+      padding: 19px 32px;
+    }
+    @include small-tablet{
+      padding: 16px;
+      width: 100%;
+    }
+  }
+
+  .logo{
+    @include small-tablet{
+      align-self: center;
+    }
+  }
+}
+

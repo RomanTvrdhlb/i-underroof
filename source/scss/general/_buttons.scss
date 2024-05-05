@@ -1,0 +1,257 @@
+.main-btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(var(--cl-a),1.0);
+  padding: 10px 24px;
+  height: clamp(56px, 5.8559vw, 65px);
+  border-radius: 16px 0;
+  background: var(--gr-a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  transition: all .4s ease-in-out;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  
+  &--transparent{
+
+    color: rgba(var(--cl-a),1.0);
+    background: transparent;
+    border: solid 1px var(--br-c);
+    padding: 10px 32px;
+
+    &:hover{
+      border-color: var(--br-d);
+    }
+  }
+
+  &--upload{
+    background: transparent;
+    color: rgba(var(--cl-d),.8);
+    border: dashed 1px var(--br-e);
+
+    &::after{
+      position: absolute;
+      content: '';
+      inset: 1px;
+      z-index: -1;
+      pointer-events: none;
+      background-color: rgba(var(--bg-b),.32);
+    }
+
+    &:hover{
+      color: rgba(var(--cl-a),1.0);
+      border-color: transparent;
+    }
+  }
+
+  &--disable{
+    color: rgba(var(--cl-c),1.0);
+    background: transparent;
+    border: solid 1px var(--br-b);
+    pointer-events: none;
+    
+    &:hover{
+      color: rgba(var(--cl-a),1.0);
+      border: solid 1px var(--br-d);
+    }
+  }
+
+  &--violet{
+    background: transparent;
+    color: rgba(var(--cl-d),.8);
+    border: solid 1px  var(--br-d);
+
+    &:hover{
+      color: rgba(var(--cl-a),1.0);
+    }
+  }
+
+  span{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(var(--bg-g),1.0);
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &:hover {
+    span {
+      width: 225%;
+      height: calc(150px * 2.25);
+    }
+  }
+
+}
+
+.geo, .tel-link{
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6216vw, 18px);
+  line-height: 150%;
+  color: rgba(var(--cl-b),1.0);
+  transition: all .2s ease;
+
+  &:hover{
+    color: rgba(var(--cl-d),1.0);
+  }
+
+  &__icon{
+    display: flex;
+  }
+
+  @include for-mobile{
+    grid-gap: 11px;
+  }
+  @include mobile{
+    grid-gap: 13px;
+  }
+}
+
+.main-link{
+  font-weight: 400;
+  font-size: clamp(16px, 1.6216vw, 18px);
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  background: var(--gr-a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+
+  &::before{
+    width: 100%;
+    position: absolute;
+    content: '';
+    height: 1px;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    content: '';
+    background: var(--gr-a);
+    transition: all .4s;
+  }
+
+  &:hover{
+    &::before{
+      right: 0;
+      left: auto;
+      width: 0;
+    }
+  }
+
+}
+
+.mail{
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6216vw, 18px);
+  line-height: 150%;
+
+  @include for-small-tablet{
+    grid-gap: 4px;
+  }
+
+  @include small-tablet{
+    grid-gap: 8px;
+  }
+
+  svg,img{
+    color: rgba(var(--cl-c),1.0);
+  }
+  transition: all .2s ease;
+
+  &:hover{
+    color: rgba(var(--cl-d),1.0);
+  }
+}
+
+.arrow-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  position: relative;
+  transition: all .4s;
+  flex-shrink: 0;
+
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: var(--icon-btn);
+    z-index: -1;
+  }
+
+  &:hover{
+    transform: scale(1.1);
+  }
+
+  &.swiper-button-disabled{
+    opacity: .5 !important;
+  }
+}
+
+.slider-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 8px;
+  margin-top: 24px;
+  
+  .swiper-pagination-bullet{
+    display: block;
+    width: 24px;
+    height: 4px;
+    background-color: rgba(var(--bg-a),1.0);
+    transition: all .3s;
+    position: relative;
+    cursor: pointer;
+
+    &::before{
+      position: absolute;
+      content: '';
+      inset: 0;
+      background: var(--gr-a);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+
+    &-active{
+      &::before{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+[data-mobile-btn], [data-submenu-btn]{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  svg{
+    @include for-tablet{
+      display: none;
+    }
+  }
+}

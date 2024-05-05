@@ -1,0 +1,30 @@
+.services-slider{
+    @include tablet{
+        width: calc(100% + (var(--container-offset) * 2));
+        margin-left: calc(var(--container-offset) * -1);
+    }
+
+    @include for-tablet{
+        .services-card{
+            box-shadow: none;
+        }
+    }
+
+    .services-card{
+        height: 100%;
+    }
+
+    &__container{
+        @include tablet{
+            padding:0 var(--container-offset) !important;
+        }
+    }
+
+    &__wrapper{
+        margin: 15px 0 26px;
+    }
+
+    &__slide{
+        height: 100%;
+    }
+}

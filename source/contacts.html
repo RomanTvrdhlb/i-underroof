@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="Ru">
+@include('partials/head.html')
+
+<body>
+  @include('partials/header.html')
+  <!--@include('partials/header-user.html')-->
+
+  <main>
+
+    <section class="first-section first-section--contacts">
+      <div class="first-section__bg first-section__bg--mode">
+        <div class="first-section__bg-left map">
+          <picture>
+            <source type='image/webp' srcset='img/index/map-bg.webp'>
+            <img width='720' height='512' src='img/index/map-bg.png' alt='image'>
+          </picture>
+        </div>
+        <div class="first-section__bg-right violet">
+          <picture>
+            <source type='image/webp' media='(max-width: 767px)' srcset='img/index/contacts-bgMob.webp'>
+            <source media='(max-width: 767px)' srcset='img/index/contacts-bgMob.png'>
+            <source type='image/webp' srcset='img/index/contacts-bg.webp'>
+            <img width='720' height='512' src='img/index/contacts-bg.png' alt='image'>
+          </picture>
+        </div>
+      </div>
+      <div class="container">
+        <div class="first-section__inner">
+          <h1 class="first-section__title h1">I UNDERROOF</h1>
+        
+          <p>Our Canadian family is here to show you the best service in the world! We offer a wide range of construction services, making your building or renovation journey feel just like coming home. Your dreams? We're here to make them come true!
+            Let's chat! We'd love to hear from you today!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section white">
+      <div class="container">
+        <div class="content-section__wrapp">
+          <ul class="comand-list">
+            <li class="comand-list__item">
+              <div class="comand-card">
+                <div class="comand-card__image">
+                  <picture>
+                    <img width='255' height='255' src='img/comand/1.webp' alt='image'>
+                  </picture>
+                </div>
+                <div class="comand-card__bottom">
+                  <span class="comand-card__title subtitle">Max Johnson</span>
+                  <span class="comand-card__text">Manager</span>
+                
+                  <a data-btn-modal="callback" class="comand-card__link main-link">Send letter
+                    <img width="9" height="15" src="./img/sprite/arrow-r.svg" alt="image">
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="comand-list__item">
+              <div class="comand-card">
+                <div class="comand-card__image">
+                  <picture>
+                    <img width='255' height='255' src='img/comand/2.webp' alt='image'>
+                  </picture>
+                </div>
+                <div class="comand-card__bottom">
+                  <span class="comand-card__title subtitle">John Miller</span>
+                  <span class="comand-card__text">Manager</span>
+                
+                  <a data-btn-modal="callback" class="comand-card__link main-link">Send letter
+                    <img width="9" height="15" src="./img/sprite/arrow-r.svg" alt="image">
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="comand-list__item">
+              <div class="comand-card">
+                <div class="comand-card__image">
+                  <picture>
+                    <img width='255' height='255' src='img/comand/3.webp' alt='image'>
+                  </picture>
+                </div>
+                <div class="comand-card__bottom">
+                  <span class="comand-card__title subtitle">Rory Smith</span>
+                  <span class="comand-card__text">Manager</span>
+               
+                  <a data-btn-modal="callback" class="comand-card__link main-link">Send letter
+                    <img width="9" height="15" src="./img/sprite/arrow-r.svg" alt="image">
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="comand-list__item">
+              <div class="comand-card">
+                <div class="comand-card__image">
+                  <picture>
+                    <img width='255' height='255' src='img/comand/4.webp' alt='image'>
+                  </picture>
+                </div>
+                <div class="comand-card__bottom">
+                  <span class="comand-card__title subtitle">Brian Williams</span>
+                  <span class="comand-card__text">Manager</span>
+                
+                  <a data-btn-modal="callback" class="comand-card__link main-link">Send letter
+                    <img width="9" height="15" src="./img/sprite/arrow-r.svg" alt="image">
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="main-contact">
+            <div class="main-contact__phone">
+              <span class="main-contact__phone-icon">
+                <img width='24' height='24' src="img/sprite/phone-gr.svg" alt="image">
+              </span>
+              <a href="tel:+4034017035" class="tel-link">
+                (403)-401-7035
+              </a>
+            </div>
+
+            <a href="mailto:iunderroof@gmail.com" class="mail">
+
+              <img width='24' height='24' src="img/sprite/mail-gr.svg" alt="image">
+              iunderroof@gmail.com
+            </a>
+
+            <a href="https://maps.app.goo.gl/oJ9BYiqvmspXpsdT6" class="geo">
+              <span class="geo__icon">
+                <img width='24' height='24' src="img/sprite/geo.svg" alt="image">
+              </span>
+              1940 31 ST SW, Calgary, AB, T3E 2M9
+            </a>
+          </div>
+
+          <form class="comand-form main-form comand-validate">
+            <div class="comand-form__top">
+              <h2 class="comand-form__title h2">Contact us</h2>
+              <p>Submit a request to get in touch with us.</p>
+            </div>
+              <label for="name3" class="comand-form__label main-form__label">
+                <input class="comand-form__input main-form__input input-name" type="text" id="name3" placeholder="Name">
+                <span class="comand-form__icon main-form__icon">
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#user'></use>
+                  </svg>
+                </span>
+              </label>
+              <label for="adress3" class="comand-form__label main-form__label">
+                <input class="comand-form main-form__input input-adress" type="text" id="adress3" placeholder="Address">
+                <span class="comand-form__icon main-form__icon">
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#mail'></use>
+                  </svg>
+                </span>
+              </label>
+                <label for="phone3" class="comand-form__label main-form__label">
+                  <input class="comand-form__input main-form__input input-phone" type="tel" id="phone3" placeholder="Telephone ">
+                  <span class="comand-form__icon main-form__icon">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#phone'></use>
+                    </svg>
+                  </span>
+                </label>
+                <label for="mail3" class="comand-form__label main-form__label">
+                  <input class="comand-form__input main-form__input input-mail" type="email" id="mail3" placeholder="E-mail">
+                  <span class="comand-form__icon main-form__icon">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#mail'></use>
+                    </svg>
+                  </span>
+                </label>
+                <label for="mess3" class="comand-form__label main-form__label">
+                  <textarea class="comand-form__area main-form__area input-mess" id="mess3" placeholder="Message"></textarea>
+                  <span class="comand-form__icon main-form__icon">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#write'></use>
+                    </svg>
+                  </span>
+                </label>
+
+                <button class="captcha">
+                  <img width="302" height="74" src="./img/captcha.png" alt="iamge">
+                </button>
+
+                <button class="main-btn">Send
+                  <span></span>
+                </button>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--info">
+      <div class="content-section__bg">
+        <picture>
+          <source type='image/webp' srcset='img/comand/photo2.webp'>
+          <img width='1440' height='928' src='img/comand/photo2.png' alt='image'>
+        </picture>
+      </div>
+      <div class="container">
+        <div class="content-section__comand">
+          <h3 class="content-section__title h2 white-text">Whatever you have in mind</h3>
+          <div class="content-section__image">
+            <picture>
+              <source type='image/webp' srcset='img/comand/photo.webp'>
+              <img width='1110' height='528' src='img/comand/photo.png' alt='image'>
+            </picture>
+          </div>
+          <span class="content-section__title h2 white-text">we bring your dreams to life</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section--ceo white">
+      <div class="container">
+        <div class="content-section__inner">
+          <div class="comand-card comand-card--mode">
+            <div class="comand-card__image">
+              <picture>
+                <img width='350' height='350' src='img/comand/ceo.webp' alt='image'>
+              </picture>
+            </div>
+            <div class="comand-card__bottom">
+              <span class="comand-card__title subtitle">Brian Davis</span>
+              <span class="comand-card__text">CEO of I-UNDERROOF</span>
+            </div>
+          </div>
+          <form class="comand-form main-form ceo-validate">
+            <div class="comand-form__top">
+              <h2 class="comand-form__title h2">Message to the CEO</h2>
+              <p>We deeply value your thoughts and feedback. Drop a note, and I assure you, I'll personally get back to you today.</p>
+            </div>
+              <label for="name4" class="comand-form__label main-form__label">
+                <input class="comand-form__input main-form__input input-name" type="text" id="name4" placeholder="Name">
+                <span class="comand-form__icon main-form__icon">
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#user'></use>
+                  </svg>
+                </span>
+              </label>
+                <label for="phone4" class="comand-form__label main-form__label">
+                  <input class="comand-form__input main-form__input input-phone" type="tel" id="phone4" placeholder="Telephone ">
+                  <span class="comand-form__icon main-form__icon">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#phone'></use>
+                    </svg>
+                  </span>
+                </label>
+                <label for="mess4" class="comand-form__label main-form__label">
+                  <textarea class="comand-form__area main-form__area input-mess" id="mess4" placeholder="Message"></textarea>
+                  <span class="comand-form__icon main-form__icon">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#write'></use>
+                    </svg>
+                  </span>
+                </label>
+
+                <label class="custom-checkbox">
+                  <input type="checkbox" class="custom-checkbox__field">
+                  <span class="custom-checkbox__content">I give my consent to the processing of personal data.</span>
+                </label>
+
+                <button class="main-btn">Send letter
+                  <span></span>
+                </button>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+
+    <div class="callback">
+      <button class="callback__btn">
+        <svg class="callback__btn-close" width='24' height='24'>
+          <use href='img/sprite/sprite.svg#close'></use>
+        </svg>
+        <svg class="callback__btn-icon" width='20' height='20'>
+          <use href='img/sprite/sprite.svg#phone'></use>
+        </svg>
+      </button>
+      <ul class="callback__list">
+        <li class="callback__item">
+          <a href="tel:+4034017035" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#phone'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item">
+          <a data-btn-modal="callback" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#call'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item  calc">
+          <a href="pricing.html" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#calc'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item">
+          <a href="mailto:iunderroof@gmail.com" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#mail'></use>
+            </svg>
+          </a>
+        </li>
+        <li class="callback__item">
+          <a href="#" class="callback__link">
+            <svg width='24' height='24'>
+              <use href='img/sprite/sprite.svg#mess'></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!--    @include('partials/components/sections/how-section.html')-->
+  </main>
+
+  @include('partials/footer.html')
+  @include('partials/modals.html')
+</body>
+<script src="js/main.js"></script>
+
+</html>
