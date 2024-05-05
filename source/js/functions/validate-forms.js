@@ -18,9 +18,12 @@ export const validateForms = (selector, rules, afterSend) => {
   let validation = new JustValidate(selector);
 
   for (let item of rules) {
+    if(item){
+      console.log( item.rules);
     validation
       .addField(item.ruleSelector, item.rules);
   }
+}
 
   validation.onSuccess((ev) => {
     afterSend()

@@ -10,7 +10,6 @@ import './components/stars-rating';
 import './components/burger';
 import './components/quiz';
 import './components/fancybox';
-import './components/validate';
 import './components/typed';
 
 
