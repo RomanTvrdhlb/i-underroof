@@ -117,9 +117,17 @@ innerButtonModal && innerButtonModal.forEach(function(btn) {
 
 closeBtns.forEach(function(btn){
   btn.addEventListener('click', function(e){
-    console.log('123');
     e.preventDefault();
     commonFunction()
     })
 })
 
+document.addEventListener( 
+  "wpcf7mailsent", 
+  function (event) { 
+    if (event.target.classList.contains("wpcf7-form")) { 
+      modalClickHandler('success');
+    } 
+  }, 
+  false 
+); 
