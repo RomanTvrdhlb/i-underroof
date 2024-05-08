@@ -16,6 +16,15 @@
     @media (min-width: (400px)) {
       margin-bottom: 0;
     }
+
+    .first-section{
+      &__inner{
+
+        @include for-tablet{
+          padding-right: 0;
+        }
+      }
+    }
   }
 
   &--about {
@@ -226,13 +235,13 @@
       color: rgba(var(--cl-a), 1);
     }
 
-    @include for-laptop {
-      padding-left: Min(8.871vw, 110px);
-    }
-
     @include for-small-tablet {
       margin-left: 50%;
       padding: 0 clamp(25px, 3.6036vw, 40px);
+    }
+
+    @include for-laptop {
+      padding-left: Min(8.871vw, 100px);
     }
 
     @include small-tablet {
