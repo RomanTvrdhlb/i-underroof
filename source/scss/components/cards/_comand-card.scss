@@ -41,6 +41,22 @@
             width: 255px;
             height: 255px;
         }
+
+        @include tablet{
+            @include for-small-tablet{
+            height: Min(39.063vw, 400px);
+            }
+        }
+
+        @include small-tablet{
+            @include for-mobile{
+                height: Min(44.922vw, 345px);
+            }
+        }
+
+        @include mobile{
+            height: 259px;
+        }
     }
 
     &__text{
