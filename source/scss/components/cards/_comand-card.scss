@@ -32,9 +32,13 @@
         overflow: hidden;
         z-index: 2;
         
-        img{
+        img,picture{
             height: 100%;
             width: 100%;
+        }
+
+        img{
+            object-position: top center;
         }
 
         @include for-tablet{
