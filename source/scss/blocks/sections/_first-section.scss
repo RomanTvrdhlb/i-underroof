@@ -356,7 +356,9 @@
         img,
         picture {
           @include mobile {
-            max-height: 454px;
+            max-height: initial;
+            height: min(109.662vw, 454px);
+            
           }
         }
       }

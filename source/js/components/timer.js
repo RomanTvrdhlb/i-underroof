@@ -1,42 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
-	const timerElement = document.querySelector('.timer-info');
+    const timerElement = document.querySelector('.timer');
 
-	if (timerElement) {
-		const duration =  timerElement.getAttribute('data-timer').split(':');
+    if (timerElement) {
+        const endTimeStr = timerElement.getAttribute('data-time');
+        console.log("End time string:", endTimeStr);
+        const endTime = new Date(endTimeStr).getTime();
+        console.log("End time in milliseconds:", endTime);
 
-		const days = parseInt(duration[0]);
-		const hours = parseInt(duration[1]);
-		const minutes = parseInt(duration[2]);
-		const seconds = parseInt(duration[3]);
+        const updateTimer = function() {
+            const now = new Date().getTime();
+            console.log("Current time in milliseconds:", now);
+            const difference = endTime - now;
+            console.log("Time difference in milliseconds:", difference);
 
-		// Преобразование времени в миллисекунды
-		const endTime = new Date().getTime() + ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60) + seconds) * 1000;
+            if (difference <= 0) {
+                clearInterval(interval);
+                timerElement.querySelectorAll('.timer__value').forEach((item) => {
+                    item.textContent = '00';
+                });
+                timerElement.setAttribute('data-title', 'Время акции уже вышло!');
+                return;
+            }
 
-		const interval = setInterval(function() {
-			const now = new Date().getTime();
-			const difference = endTime - now;
+            // Вычисление оставшегося времени
+            const remainingDays = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const remainingHours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const remainingMinutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const remainingSeconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-			if (difference <= 0) {
-				clearInterval(interval);
-				timerElement.querySelectorAll('.timer-info__num').forEach((item)=> {
-					item.textContent = '00'
-				})
-				timerElement.setAttribute('data-title', 'Час вийшов!');
-				return;
-			}
+            console.log("Remaining time:", remainingDays, remainingHours, remainingMinutes, remainingSeconds);
 
-			// Вычисление оставшегося времени
-			const remainingDays = Math.floor(difference / (1000 * 60 * 60 * 24));
-			const remainingHours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			const remainingMinutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-			const remainingSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+            // Обновление элементов на странице
+            timerElement.querySelector('.timer__days').textContent = remainingDays.toString().padStart(2, '0');
+            timerElement.querySelector('.timer__hours').textContent = remainingHours.toString().padStart(2, '0');
+            timerElement.querySelector('.timer__minutes').textContent = remainingMinutes.toString().padStart(2, '0');
+            timerElement.querySelector('.timer__seconds').textContent = remainingSeconds.toString().padStart(2, '0');
+        };
 
-			// Обновление элементов на странице
-			timerElement.querySelector('.days').textContent = remainingDays;
-			timerElement.querySelector('.hours').textContent = remainingHours;
-			timerElement.querySelector('.minutes').textContent = remainingMinutes;
-			timerElement.querySelector('.seconds').textContent = remainingSeconds;
-		}, 1000);
-	}
-
+        // Проверка сразу после загрузки страницы
+        if (new Date().getTime() >= endTime) {
+            timerElement.querySelectorAll('.timer__value').forEach((item) => {
+                item.textContent = '00';
+            });
+            timerElement.setAttribute('data-title', 'Время акции уже вышло!');
+        } else {
+            // Запуск таймера
+            updateTimer();
+            const interval = setInterval(updateTimer, 1000);
+        }
+    }
 });

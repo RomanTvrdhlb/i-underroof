@@ -13,6 +13,18 @@
       width: 100%;
       height: 100%;
     }
+
+    &.gray{
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: rgba(var(--bg-b),1.0);
+        pointer-events: none;
+        opacity: 0.6;
+      }
+    }
   }
 
   &__box {
@@ -367,6 +379,18 @@
       &__inner {
         @include for-small-tablet {
           align-items: center;
+        }
+      }
+
+      &__bg{
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          background: rgba(var(--bg-b),1.0);
+          pointer-events: none;
+          opacity: 0.6;
         }
       }
 
